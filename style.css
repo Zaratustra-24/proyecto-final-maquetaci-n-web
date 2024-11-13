@@ -1,0 +1,283 @@
+/* font-family: "Lexend", sans-serif;
+font-family: "Roboto Flex", sans-serif; */
+
+/*NORMALIZACIÓN*/
+*{
+    padding: o;
+    margin: o;
+    box-sizing: border-box; /*Esto mantiene el ancho y alto a pesar de padding y border*/
+    font-family: "Lexend", sans-serif;
+    list-style: none; /*quitar los puntos y decoración de las listas*/
+    text-decoration: none; /*quita la decoración de los links*/
+    color: white;
+
+}
+
+body{
+    background-color: black;
+}
+
+header{
+    position: fixed; /*esto hace que el header se quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100; /*esto hace que el header se muesre por encima*/
+    width: 100%;
+    display: flex; /*esto hará que los elementos se pongan en línea*/
+    align-items: center; /*centra verticalmente*/
+    justify-content: space-between; /*que los elementos se separen*/
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+logo{
+    font-size: 30px;
+    font-weight: 800; /*grueso de las leyras*/
+}
+.navlist{
+    display: flex; 
+}
+.navlist a {
+    margin-left: 60px; /*es para separar las palabras*/
+    font-size: 15px; 
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /*este es un subrayado trasnparente*/
+    transition: all .5s ease; /*estov es para animar todas las caracteristicas del .navlist a*/
+ }
+
+ .navlist a:hover{ 
+    border-bottom:  2px solid white;
+    font-size: 16px;
+    font-weight: 700;
+ }
+
+ /* #menu-icon{
+    display: none; esto esta en none para que solo se ve acuando la pagina esta colapsada
+ } */
+    
+ #menu-icon{
+    display: none;
+    font-size: 35px;
+    z-index: 101; /*para que se vea por encima del header*/
+    cursor: pointer; /*para que aparezca la manito cuando ponemos el mouse encima*/
+ }
+#camera-icon{
+    font-size: 15px;
+    z-index: 101; /*para que se vea por encima del header*/
+    cursor: pointer; /*para que aparezca la manito cuando ponemos el mouse encima*/
+    margin-right: 5px;
+    transition: all 2s ease;
+
+ }
+ #menu-toggle{
+    display: none; /* esto nunca q¡tiene que verse*/
+ }
+
+ #menu-icon-action{
+    display: none;
+ }
+
+ .hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*Fondo de color gradiente*/
+    position: relative; /*para que sea relativo al contenedor, nos permite usar top, bottom left y rigth*/
+    display: grid; /*para que el hero se pueda dividir en dos columnas*/
+    grid-template-columns: 1fr 1fr; /*dos columnas*/
+    align-items: center; /*para alinear verticalmente el hero*/
+    gap: 2rem; /*para que haya esacio de dos rem entre las columnas*/
+ }
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero-text h1{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px
+ }
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text p{
+    font-size: 80%; /*se achica cuando el contenedor padre se achica*/
+    margin-bottom: 40px;
+    line-height: 1.9; /*interlineado*/
+}
+
+.hero-img img{
+    width: 500px;
+    margin: 10% 0 0 0;
+    height: auto;
+    transition: all 1s ease; /*esto hace la transitcion lineal*/
+}
+
+.hero-img img:hover{
+    width: 520px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #1aadf1;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 2s ease;
+    margin-bottom: 20px;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.camera{
+    border: 1px solid rgb(179, 232, 185);
+}
+
+.hero-text a.camera:hover{
+    background-color: rgb(27, 122, 36);
+    border: 2px solid rgb(179, 232, 185);
+}
+
+#camera-icon{
+    margin-right: 10px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover{
+    color: #b3b49a;
+    transform: translateY(-4px) ;
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #6a625f;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform:translateY(-5px);
+    background-color: #e4d8d3;
+}
+
+/* --------------MEDIA QUERIES PARA QUE LAM WEB SEA RESPONSIVE--------*/
+
+@media (max-width: 1130px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: o;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 400px;
+        margin-left: 5%;
+    }
+    .hero-img img:hover{
+        width: 420px;
+    }
+    .icons{
+        display: none;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 1010px){
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 250px;
+        height: 180px;
+        background-color: #04141fb3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+        transition: all 1s linear;
+    }
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+
+
+
+}
+
